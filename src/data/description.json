@@ -1,0 +1,25 @@
+{
+  "appName": "I-ON Communications Vue Test",
+  "disclaimer": "Do it with passion",
+  "description": "",
+  "testhome": {
+    "title": "I-ON Communication coding challenge",
+    "note": "You can start by selecting a test"
+  },
+  "test1": {
+    "title": "A simple Q&A  HTML table content",
+    "note": "Select row, see v-html and scroll to top"
+  },
+  "test2": {
+    "title": "Cards and Images",
+    "note": "Rows and Columns, image using vue directive to cover center"
+  },
+  "test3": {
+    "title": "Simple Progress bars",
+    "note": "Data from afar, random to animate"
+  },
+  "test4": {
+    "title": "Q&A with search feature",
+    "note": "Case insensitive, highlight result"
+  }
+}

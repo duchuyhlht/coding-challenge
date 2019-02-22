@@ -15,8 +15,4 @@ npm run serve
 npm run build
 ```
 
-### You can visit [Online Demo]https://duchuyhlht.github.io
-
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### You can visit [Online Demo](https://duchuyhlht.github.io/)

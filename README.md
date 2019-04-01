@@ -1,5 +1,4 @@
 # vue-test
-### You can visit [Online Demo](https://duchuyhlht.github.io/)
 
 > A Vuejs Test
 

@@ -1,31 +1,24 @@
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import App from './App.vue'
+import App from './App'
 import router from './router'
-import store from './store'
-import Argon from './plugins/css-kit'
-import directives from './directives'
-import filters from './filters'
-import globalMixin from './mixins'
-import services from './services'
-
-/* --------------------- */
-/* ------ Utils -------- */
-require('@/app/core')
-/* --------------------- */
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import VeeValidate from 'vee-validate'
+import VueChartkick from 'vue-chartkick'
+import Chart from 'chart.js'
 
 Vue.config.productionTip = false
 
-Vue.use(Argon)
-Vue.use(directives)
-Vue.use(filters)
+Vue.use(ElementUI)
+Vue.use(VeeValidate)
+Vue.use(VueChartkick, {adapter: Chart})
 
-Vue.mixin(globalMixin)
-
+/* eslint-disable no-new */
 new Vue({
-  provide: {
-    ...services
-  },
+  el: '#app',
   router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+  components: { App },
+  template: '<App/>'
+})

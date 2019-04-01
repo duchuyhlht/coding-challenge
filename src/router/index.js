@@ -1,49 +1,38 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Sitemap from './Sitemap'
-
-import AppHeader from '@/layout/AppHeader'
-import AppFooter from '@/layout/AppFooter'
-import AppNavbar from '@/layout/AppNavbar'
-
-import Main from '@/views/Main.vue'
-import Home from '@/views/Home.vue'
-
-const Test1 = () => import('@/views/Test1.vue')
-const Test2 = () => import('@/views/Test2.vue')
-const Test3 = () => import('@/views/Test3.vue')
-const Test4 = () => import('@/views/Test4.vue')
+import Main from '@/components/Main'
+import Test1 from '@/components/Test1'
+import Test2 from '@/components/Test2'
+import Test3 from '@/components/Test3'
+import Test4 from '@/components/Test4'
 
 Vue.use(Router)
 
 export default new Router({
-  base: process.env.BASE_URL,
   routes: [
     {
-      path: Sitemap.index,
-      components: {
-        default: Main,
-        header: AppHeader,
-        footer: AppFooter,
-        navbar: AppNavbar
-      },
-      children: [
-        { path: '', component: Home },
-        { ...Sitemap.test1, component: Test1 },
-        { ...Sitemap.test2, component: Test2 },
-        { ...Sitemap.test3, component: Test3 },
-        { ...Sitemap.test4, component: Test4 }
-      ]
+      path: '/',
+      name: 'Main',
+      component: Main
     },
-    { path: '*', redirect: Sitemap.index } // 404 not found
-  ],
-  scrollBehavior (to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    } else if (to.hash) {
-      return { selector: to.hash }
-    } else {
-      return { x: 0, y: 0 }
+    {
+      path: '/test1',
+      name: 'Test1',
+      component: Test1
+    }, {
+      path: '/test2',
+      name: 'Test2',
+      component: Test2
+    },
+    {
+      path: '/test3',
+      name: 'Test3',
+      component: Test3
+    },
+    {
+      path: '/test4',
+      name: 'Test4',
+      component: Test4
     }
-  }
+  ]
 })
